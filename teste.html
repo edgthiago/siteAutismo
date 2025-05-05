@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Autismo - Modo Simplificado</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos para garantir visibilidade */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        .preloader {
+            display: none !important;
+        }
+        
+        /* Classe de troubleshooting */
+        .debug-border {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Portal Autismo - Modo Simplificado</h1>
+            </div>
+        </div>
+    </header>
+
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2>O que é o Transtorno do Espectro Autista (TEA)</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>O Transtorno do Espectro Autista (TEA) é uma condição de neurodesenvolvimento que afeta a comunicação, interação social e comportamento. O termo "espectro" reflete a grande variação na forma e intensidade com que os sintomas se manifestam em cada pessoa.</p>
+                </div>
+                <div class="content-image">
+                    <img src="images/autism-spectrum.jpg.jpg" alt="Ilustração do espectro autista" onerror="this.src='https://via.placeholder.com/400x300?text=Imagem+Indisponível'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Script minimalista para debug
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página carregada em modo simplificado');
+            
+            // Verifica se as imagens carregaram
+            document.querySelectorAll('img').forEach(function(img) {
+                img.addEventListener('error', function() {
+                    console.error('Erro ao carregar imagem:', this.src);
+                    this.src = 'https://via.placeholder.com/400x300?text=Imagem+Indisponível';
+                });
+                
+                img.addEventListener('load', function() {
+                    console.log('Imagem carregada com sucesso:', this.src);
+                });
+            });
+            
+            // Adiciona bordas para debug visual
+            function toggleDebugBorders() {
+                document.querySelectorAll('section, div, img').forEach(function(el) {
+                    el.classList.toggle('debug-border');
+                });
+            }
+            
+            // Adiciona botão de debug na tela
+            const debugBtn = document.createElement('button');
+            debugBtn.textContent = 'Modo Debug';
+            debugBtn.style.position = 'fixed';
+            debugBtn.style.top = '10px';
+            debugBtn.style.right = '10px';
+            debugBtn.style.zIndex = '9999';
+            debugBtn.addEventListener('click', toggleDebugBorders);
+            document.body.appendChild(debugBtn);
+        });
+    </script>
+</body>
+</html>

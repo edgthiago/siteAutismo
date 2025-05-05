@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Autismo - Informação, Apoio e Inclusão</title>
+    <meta name="description" content="Portal completo com informações sobre TEA (Transtorno do Espectro Autista), recursos, direitos, tratamentos e apoio para famílias e profissionais">
+    
+    <!-- Meta tags para SEO -->
+    <meta name="keywords" content="autismo, TEA, transtorno do espectro autista, neurodiversidade, inclusão, direitos, diagnóstico autismo">
+    <meta name="author" content="Portal Autismo Brasil">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.portalautismo.com.br/">
+    <meta property="og:title" content="Portal Autismo - Informação, Apoio e Inclusão">
+    <meta property="og:description" content="Informações completas sobre autismo, direitos, diagnóstico e recursos para famílias e profissionais">
+    <meta property="og:image" content="https://www.portalautismo.com.br/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.portalautismo.com.br/">
+    <meta property="twitter:title" content="Portal Autismo - Informação, Apoio e Inclusão">
+    <meta property="twitter:description" content="Informações completas sobre autismo, direitos, diagnóstico e recursos para famílias e profissionais">
+    <meta property="twitter:image" content="https://www.portalautismo.com.br/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Adicionando fonte Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="images/banner.jpg" as="image">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+</head>
+<body>
+    <!-- Pré-carregador -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="puzzle-piece"></div>
+            <p>Carregando...</p>
+        </div>
+    </div>
+
+    <!-- Botão para voltar ao topo -->
+    <button id="back-to-top" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Botão para modo escuro -->
+    <button class="dark-mode-toggle" id="darkModeToggle" title="Alternar modo escuro"><i class="fas fa-moon"></i></button>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Portal Autismo</h1>
+            </div>
+            <button class="menu-mobile-btn" id="menuMobileBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#sobre">O que é Autismo</a></li>
+                    <li><a href="#sinais">Sinais e Sintomas</a></li>
+                    <li><a href="#diagnostico">Diagnóstico</a></li>
+                    <li><a href="#tratamentos">Intervenções</a></li>
+                    <li><a href="#direitos">Direitos</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#faq">Perguntas Frequentes</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li class="nav-highlight"><a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i> Apoio Online</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Controles de Acessibilidade -->
+        <div class="container">
+            <div class="accessibility-controls">
+                <div class="control-group">
+                    <span class="label">Tamanho da fonte:</span>
+                    <button class="accessibility-btn" id="fontSizeDefault" title="Tamanho padrão">A</button>
+                    <button class="accessibility-btn" id="fontSizeLarge" title="Tamanho grande">A+</button>
+                    <button class="accessibility-btn" id="fontSizeXLarge" title="Tamanho muito grande">A++</button>
+                </div>
+                
+                <div class="control-group">
+                    <span class="label">Leitura:</span>
+                    <button class="accessibility-btn" id="lineHeightToggle" title="Espaçamento entre linhas"><i class="fas fa-text-height"></i></button>
+                    <button class="accessibility-btn" id="readingFocusToggle" title="Modo foco de leitura"><i class="fas fa-glasses"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container">
+            <div class="banner-text">
+                <h2>Compreendendo o Transtorno do Espectro Autista</h2>
+                <p>Informação, acolhimento e inclusão para pessoas autistas e suas famílias</p>
+                <a href="#sobre" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2>O que é o Transtorno do Espectro Autista (TEA)</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>O Transtorno do Espectro Autista (TEA) é uma condição de neurodesenvolvimento que afeta a comunicação, interação social e comportamento. O termo "espectro" reflete a grande variação na forma e intensidade com que os sintomas se manifestam em cada pessoa.</p>
+                    <p>O autismo não é uma doença, mas uma condição de desenvolvimento que faz parte da neurodiversidade humana. Pessoas autistas têm maneiras diferentes de perceber o mundo, processar informações e interagir socialmente.</p>
+                    <p>Cada pessoa autista é única, com suas próprias habilidades, desafios, preferências e personalidade. O diagnóstico precoce e o acesso a suportes adequados são fundamentais para o desenvolvimento e qualidade de vida.</p>
+                    <a href="https://cartilha-autismo.pdf" download class="btn"><i class="fas fa-download"></i> Baixar Cartilha Informativa</a>
+                </div>
+                <div class="content-image">
+                    <img src="images/autism-spectrum.jpg.jpg" alt="Ilustração do espectro autista">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sinais" class="section blue-bg">
+        <div class="container">
+            <h2>Sinais e Sintomas</h2>
+            <p class="subtitle">Os sinais podem variar muito entre diferentes pessoas e aparecer em diferentes idades</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="number">1:36</div>
+                    <div class="label">Crianças diagnosticadas com TEA no mundo</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">4:1</div>
+                    <div class="label">Proporção entre meninos e meninas diagnosticados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">2</div>
+                    <div class="label">Anos é a idade ideal para início da intervenção</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">+2M</div>
+                    <div class="label">Pessoas autistas no Brasil</div>
+                </div>
+            </div>
+            
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Comunicação</h3>
+                    <ul>
+                        <li>Atraso ou ausência da fala</li>
+                        <li>Dificuldade em iniciar ou manter conversas</li>
+                        <li>Fala repetitiva ou ecolalia</li>
+                        <li>Uso literal da linguagem</li>
+                        <li>Dificuldade com linguagem não-verbal</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3>Interação Social</h3>
+                    <ul>
+                        <li>Dificuldade em estabelecer contato visual</li>
+                        <li>Dificuldade em entender expressões faciais</li>
+                        <li>Preferência por brincar sozinho</li>
+                        <li>Desafios para compreender regras sociais</li>
+                        <li>Dificuldade em compartilhar interesses</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Comportamento</h3>
+                    <ul>
+                        <li>Movimentos repetitivos (estereotipias)</li>
+                        <li>Interesses intensos e específicos</li>
+                        <li>Resistência a mudanças na rotina</li>
+                        <li>Hiper ou hipossensibilidade sensorial</li>
+                        <li>Necessidade de rotinas e previsibilidade</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="callout">
+                <p><strong>É importante lembrar:</strong> A presença de alguns desses sinais não indica necessariamente autismo. Um diagnóstico deve ser feito por profissionais especializados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="diagnostico" class="section">
+        <div class="container">
+            <h2>Diagnóstico</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>O diagnóstico do TEA é clínico, realizado por uma equipe multiprofissional que pode incluir neurologistas, psiquiatras, psicólogos, fonoaudiólogos e terapeutas ocupacionais, entre outros.</p>
+                    <p>O processo diagnóstico geralmente envolve:</p>
+                    <ul>
+                        <li>Observação clínica</li>
+                        <li>Entrevistas com pais/cuidadores</li>
+                        <li>Avaliação do desenvolvimento</li>
+                        <li>Instrumentos específicos de avaliação para autismo</li>
+                        <li>Exames complementares para descartar outras condições</li>
+                    </ul>
+                    <p>O diagnóstico precoce é fundamental para iniciar intervenções o quanto antes, o que pode fazer grande diferença no desenvolvimento da criança.</p>
+                </div>
+                <div class="content-image">
+                    <img src="images/diagnostic.jpg.jpg" alt="Profissionais realizando avaliação diagnóstica">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tratamentos" class="section green-bg">
+        <div class="container">
+            <h2>Intervenções e Apoios</h2>
+            <p class="subtitle">Não existe um único tratamento para o autismo, mas diversas abordagens que podem apoiar o desenvolvimento</p>
+            
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Cada abordagem atende a necessidades específicas, buscando proporcionar melhor qualidade de vida e desenvolvimento pleno.</p>
+                </div>
+                <div class="content-image">
+                    <img src="images/terapia_intervenção.jpg" alt="Terapia e intervenção para pessoas autistas">
+                </div>
+            </div>
+            
+            <div class="interventions">
+                <div class="intervention">
+                    <h3>Terapias Comportamentais</h3>
+                    <p>ABA, TEACCH, Denver, entre outras abordagens que trabalham habilidades específicas e comportamentos.</p>
+                </div>
+                
+                <div class="intervention">
+                    <h3>Fonoaudiologia</h3>
+                    <p>Fundamental para o desenvolvimento da comunicação, linguagem e habilidades sociais.</p>
+                </div>
+                
+                <div class="intervention">
+                    <h3>Terapia Ocupacional</h3>
+                    <p>Ajuda a desenvolver habilidades para vida diária e trabalha questões sensoriais.</p>
+                </div>
+                
+                <div class="intervention">
+                    <h3>Psicoterapia</h3>
+                    <p>Apoio emocional e desenvolvimento de habilidades sociais e autoconhecimento.</p>
+                </div>
+                
+                <div class="intervention">
+                    <h3>Intervenção Educacional</h3>
+                    <p>Adaptações no ambiente escolar e estratégias pedagógicas inclusivas.</p>
+                </div>
+                
+                <div class="intervention">
+                    <h3>Apoio Familiar</h3>
+                    <p>Orientação para famílias sobre como apoiar a pessoa autista no dia a dia.</p>
+                </div>
+            </div>
+            
+            <div class="callout">
+                <p>Cada pessoa autista é única e responde de forma diferente às intervenções. O ideal é um plano personalizado que considere as necessidades, desafios e potencialidades específicas de cada indivíduo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="direitos" class="section">
+        <div class="container">
+            <h2>Direitos das Pessoas Autistas no Brasil</h2>
+            
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Conhecer seus direitos é fundamental para garantir acesso a serviços, benefícios e oportunidades garantidos por lei.</p>
+                </div>
+                <div class="content-text">
+                    <p>A <strong>Lei Berenice Piana</strong> (Lei 12.764/2012) foi um marco importante na garantia de direitos para pessoas autistas no Brasil, equiparando legalmente o TEA a uma deficiência para todos os efeitos legais.</p>
+                    <p>Conhecer e reivindicar esses direitos é essencial para garantir inclusão, acesso a serviços e qualidade de vida.</p>
+                </div>
+            </div>
+            
+            <div class="rights-cards">
+                <div class="rights-card">
+                    <h3>Lei Berenice Piana (12.764/2012)</h3>
+                    <p>Institui a Política Nacional de Proteção dos Direitos da Pessoa com Transtorno do Espectro Autista, garantindo direitos como diagnóstico precoce, tratamentos multidisciplinares e inclusão escolar.</p>
+                    <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12764.htm" target="_blank" class="btn-pequeno">Ver lei completa</a>
+                </div>
+                
+                <div class="rights-card">
+                    <h3>Carteira de Identificação da Pessoa com TEA</h3>
+                    <p>Documento que garante prioridade em atendimentos públicos e privados (Lei 13.977/2020).</p>
+                    <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/l13977.htm" target="_blank" class="btn-pequeno">Saiba como obter</a>
+                </div>
+                
+                <div class="rights-card">
+                    <h3>Benefício de Prestação Continuada (BPC)</h3>
+                    <p>Benefício no valor de um salário mínimo para pessoas com deficiência em situação de vulnerabilidade social.</p>
+                    <a href="https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/beneficio-assistencial-a-pessoa-com-deficiencia-bpc" target="_blank" class="btn-pequeno">Como solicitar</a>
+                </div>
+                
+                <div class="rights-card">
+                    <h3>Educação Inclusiva</h3>
+                    <p>Direito a matricular-se em escolas regulares com suportes necessários, sem custo adicional.</p>
+                    <a href="https://www.gov.br/mec/pt-br/assuntos/news/educacao-inclusiva-1" target="_blank" class="btn-pequeno">Mais informações</a>
+                </div>
+                
+                <div class="rights-card">
+                    <h3>Isenções Fiscais</h3>
+                    <p>Possibilidade de isenção de IPI, ICMS, IPVA e IOF na compra de veículos adaptados, entre outros benefícios.</p>
+                    <a href="https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/isencoes/ipi-iof-pessoas-com-deficiencia" target="_blank" class="btn-pequeno">Verificar isenções</a>
+                </div>
+            </div>
+            
+            <a href="#recursos" class="btn">Saiba mais sobre recursos e direitos</a>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="section">
+        <div class="container">
+            <h2>Histórias e Depoimentos</h2>
+            <p class="subtitle">Experiências reais de famílias e pessoas autistas</p>
+            
+            <div class="testimonials">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Quando soubemos do diagnóstico do nosso filho, ficamos perdidos. Graças às informações e ao apoio de outras famílias, conseguimos entender melhor como ajudá-lo. Hoje ele está se desenvolvendo de uma forma que não imaginávamos possível. Cada conquista é celebrada como uma grande vitória."</p>
+                        <p class="testimonial-author">Marta Silva <span>- Mãe do Pedro, 7 anos</span></p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Fui diagnosticado com autismo apenas aos 25 anos. Finalmente pude entender porque me sentia tão diferente durante toda a minha vida. Conhecer outras pessoas no espectro e ter acesso aos recursos certos mudou completamente minha forma de enxergar o mundo e a mim mesmo."</p>
+                        <p class="testimonial-author">Carlos Mendes <span>- Adulto autista, 32 anos</span></p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Na escola, minha filha enfrentava grandes dificuldades até implementarmos as adaptações necessárias. O conhecimento dos direitos garantidos por lei e uma parceria com os educadores fez toda a diferença. Hoje ela adora ir à escola e tem feito amizades pela primeira vez."</p>
+                        <p class="testimonial-author">Ana Paula Rodrigues <span>- Mãe da Luiza, 9 anos</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#contato" class="btn">Compartilhe sua história</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="section purple-bg">
+        <div class="container">
+            <h2>Recursos e Apoio</h2>
+            
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Contar com uma rede de apoio e recursos adequados faz toda a diferença na jornada de famílias e pessoas autistas.</p>
+                </div>
+                <div class="content-image">
+                    <img src="images/resources-community.jpg.jpg" alt="Comunidade e recursos de apoio para pessoas autistas">
+                </div>
+            </div>
+            
+            <div class="resources">
+                <div class="resource">
+                    <h3>Associações e ONGs</h3>
+                    <ul>
+                        <li><a href="https://www.abraca.org.br/" target="_blank">Associação Brasileira de Autismo (ABRA)</a></li>
+                        <li><a href="https://www.ama.org.br/" target="_blank">Associação de Amigos do Autista (AMA)</a></li>
+                        <li><a href="https://www.moab.org.br/" target="_blank">Movimento Orgulho Autista Brasil</a></li>
+                        <li><a href="https://institutoneurosaber.com.br/" target="_blank">Instituto Neurosaber</a></li>
+                        <li><a href="https://www.reviravoltaautismo.org.br/" target="_blank">ReviravoltA</a></li>
+                    </ul>
+                </div>
+                
+                <div class="resource">
+                    <h3>Material de Apoio</h3>
+                    <ul>
+                        <li><a href="https://www.gov.br/mdh/pt-br/navegue-por-temas/pessoa-com-deficiencia/publicacoes-1" target="_blank">Cartilhas informativas</a></li>
+                        <li><a href="https://www.facebook.com/groups/autismobrasil/" target="_blank">Grupos de apoio online</a></li>
+                        <li><a href="https://www.youtube.com/c/InstitutoNeurosaber" target="_blank">Canais no YouTube</a></li>
+                        <li><a href="https://www.amazon.com.br/s?k=livros+sobre+autismo" target="_blank">Livros especializados</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.auticiel.ablascoolpt" target="_blank">Aplicativos de comunicação alternativa</a></li>
+                    </ul>
+                </div>
+                
+                <div class="resource">
+                    <h3>CAPs e Serviços Públicos</h3>
+                    <ul>
+                        <li><a href="https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/centro-de-atencao-psicossocial-caps" target="_blank">Centros de Atenção Psicossocial (CAPS)</a></li>
+                        <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/atendimento-a-pessoa-com-deficiencia-no-sus" target="_blank">Atendimento pelo SUS</a></li>
+                        <li><a href="https://aps.saude.gov.br/ape/nasf" target="_blank">Núcleos de Apoio à Saúde da Família (NASF)</a></li>
+                        <li><a href="https://www.gov.br/saude/pt-br/acesso-a-informacao/acoes-e-programas/centro-especializado-em-reabilitacao-cer" target="_blank">Centros Especializados em Reabilitação (CER)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eventos" class="section green-bg">
+        <div class="container">
+            <h2>Eventos e Capacitação</h2>
+            <p class="subtitle">Fique por dentro dos próximos eventos sobre autismo no Brasil</p>
+            
+            <div class="eventos-grid">
+                <div class="evento-card">
+                    <div class="evento-data">
+                        <span class="evento-dia">18</span>
+                        <span class="evento-mes">Maio</span>
+                    </div>
+                    <div class="evento-info">
+                        <h3>Simpósio Brasileiro de Autismo</h3>
+                        <p class="evento-local"><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                        <p>Evento científico com palestras de especialistas nacionais e internacionais sobre os avanços nas pesquisas e intervenções em TEA.</p>
+                        <a href="https://simposioautismo.com.br" target="_blank" class="btn-pequeno">Inscreva-se</a>
+                    </div>
+                </div>
+                
+                <div class="evento-card">
+                    <div class="evento-data">
+                        <span class="evento-dia">05</span>
+                        <span class="evento-mes">Jun</span>
+                    </div>
+                    <div class="evento-info">
+                        <h3>Workshop para Famílias</h3>
+                        <p class="evento-local"><i class="fas fa-map-marker-alt"></i> Online</p>
+                        <p>Capacitação para pais e familiares sobre estratégias práticas para lidar com os desafios do dia a dia e promover o desenvolvimento.</p>
+                        <a href="https://workshop-tea-familias.com.br" target="_blank" class="btn-pequeno">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="evento-card">
+                    <div class="evento-data">
+                        <span class="evento-dia">22</span>
+                        <span class="evento-mes">Jul</span>
+                    </div>
+                    <div class="evento-info">
+                        <h3>Formação em ABA</h3>
+                        <p class="evento-local"><i class="fas fa-map-marker-alt"></i> Rio de Janeiro, RJ</p>
+                        <p>Curso intensivo sobre Análise do Comportamento Aplicada para profissionais da saúde e educação que trabalham com pessoas autistas.</p>
+                        <a href="https://formacao-aba.com.br" target="_blank" class="btn-pequeno">Inscreva-se</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calendario-wrapper">
+                <div class="calendario-header">
+                    <h3><i class="far fa-calendar-alt"></i> Calendário de Eventos</h3>
+                    <div class="calendario-nav">
+                        <button class="calendario-btn" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <span id="currentMonth">Maio 2025</span>
+                        <button class="calendario-btn" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="calendario" id="calendario">
+                    <!-- Cabeçalho do calendário -->
+                    <div class="dia-da-semana">Domingo</div>
+                    <div class="dia-da-semana">Segunda</div>
+                    <div class="dia-da-semana">Terça</div>
+                    <div class="dia-da-semana">Quarta</div>
+                    <div class="dia-da-semana">Quinta</div>
+                    <div class="dia-da-semana">Sexta</div>
+                    <div class="dia-da-semana">Sábado</div>
+                    
+                    <!-- Dias serão populados via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section blue-bg">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <p class="subtitle">Respostas para as dúvidas mais comuns sobre o Transtorno do Espectro Autista</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>O autismo tem cura?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O autismo não é uma doença, mas uma condição de neurodesenvolvimento, portanto não falamos em cura. Com diagnóstico precoce e intervenções adequadas, muitas pessoas autistas podem desenvolver habilidades, superar desafios e viver de forma plena e independente, de acordo com seu perfil e necessidades.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Vacinas causam autismo?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não. Diversos estudos científicos rigorosos comprovaram que não existe relação entre vacinas e o desenvolvimento do autismo. Esta informação equivocada surgiu a partir de um estudo fraudulento que já foi desmentido pela comunidade científica.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como é feito o diagnóstico de autismo?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O diagnóstico é clínico, realizado por equipe multidisciplinar que pode incluir neurologista, psiquiatra, psicólogo e outros especialistas. São utilizados critérios estabelecidos internacionalmente (como o DSM-5), entrevistas com familiares, observação clínica e instrumentos específicos de avaliação.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Autismo afeta apenas crianças?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não, o autismo é uma condição que acompanha a pessoa por toda a vida. Muitos adultos recebem diagnóstico tardio. As manifestações podem mudar ao longo da vida, assim como as necessidades de apoio, mas a condição em si permanece.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Pessoas autistas conseguem trabalhar e estudar?</h3>
+                        <span class="toggle-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Com os apoios adequados, pessoas autistas podem estudar, trabalhar e ter vida independente. Muitas têm habilidades especiais em áreas específicas que podem ser valorizadas no mercado de trabalho. Existem empresas com programas específicos de inclusão para neurodiversos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p class="subtitle">Tire suas dúvidas ou compartilhe sua experiência conosco</p>
+            
+            <div class="contact-form">
+                <form id="formContato">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" name="assunto">
+                            <option value="duvida">Dúvida</option>
+                            <option value="depoimento">Compartilhar experiência</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Portal Autismo</h2>
+                    <p>Informação, acolhimento e inclusão</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Menu Rápido</h3>
+                    <ul>
+                        <li><a href="#sobre">O que é Autismo</a></li>
+                        <li><a href="#sinais">Sinais e Sintomas</a></li>
+                        <li><a href="#diagnostico">Diagnóstico</a></li>
+                        <li><a href="#tratamentos">Intervenções</a></li>
+                        <li><a href="#direitos">Direitos</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                        <li><a href="#eventos">Eventos</a></li>
+                        <li><a href="#faq">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Siga-nos</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/portalautismobrasil" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/portalautismo" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/c/portalautismo" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com/portalautismo" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Portal Autismo - Todos os direitos reservados</p>
+                <p>Este site tem caráter informativo e não substitui o aconselhamento médico profissional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
