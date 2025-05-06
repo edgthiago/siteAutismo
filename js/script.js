@@ -446,3 +446,176 @@ function resetActiveButtons() {
     fontSizeLarge.classList.remove('active');
     fontSizeXLarge.classList.remove('active');
 }
+
+// Funcionalidades para o novo header e acessibilidade
+document.addEventListener('DOMContentLoaded', function() {
+    // Painel de acessibilidade
+    const accessibilityPanel = document.getElementById('accessibilityPanel');
+    const accessibilityToggle = document.getElementById('accessibilityToggle');
+    const closeAccessibilityPanel = document.getElementById('closeAccessibilityPanel');
+    
+    // Botão para abrir painel de acessibilidade
+    accessibilityToggle.addEventListener('click', function() {
+        accessibilityPanel.classList.add('active');
+    });
+    
+    // Botão para fechar painel de acessibilidade
+    closeAccessibilityPanel.addEventListener('click', function() {
+        accessibilityPanel.classList.remove('active');
+    });
+    
+    // Fechar o painel ao clicar fora dele
+    document.addEventListener('click', function(event) {
+        if (!accessibilityPanel.contains(event.target) && event.target !== accessibilityToggle) {
+            accessibilityPanel.classList.remove('active');
+        }
+    });
+    
+    // Opção de fonte para dislexia
+    const dyslexicFontToggle = document.getElementById('dyslexicFontToggle');
+    
+    if (dyslexicFontToggle) {
+        if (localStorage.getItem('dyslexicFont') === 'on') {
+            document.body.classList.add('dyslexic-font');
+            dyslexicFontToggle.classList.add('active');
+        }
+        
+        dyslexicFontToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dyslexic-font');
+            this.classList.toggle('active');
+            
+            if (document.body.classList.contains('dyslexic-font')) {
+                localStorage.setItem('dyslexicFont', 'on');
+            } else {
+                localStorage.setItem('dyslexicFont', 'off');
+            }
+        });
+    }
+    
+    // Opções de contraste
+    const contrastDefault = document.getElementById('contrastDefault');
+    const contrastHigh = document.getElementById('contrastHigh');
+    
+    if (contrastDefault && contrastHigh) {
+        if (localStorage.getItem('contrast') === 'high') {
+            document.body.classList.add('high-contrast');
+            contrastHigh.classList.add('active');
+        } else {
+            contrastDefault.classList.add('active');
+        }
+        
+        contrastDefault.addEventListener('click', function() {
+            document.body.classList.remove('high-contrast');
+            localStorage.setItem('contrast', 'default');
+            
+            contrastHigh.classList.remove('active');
+            this.classList.add('active');
+        });
+        
+        contrastHigh.addEventListener('click', function() {
+            document.body.classList.add('high-contrast');
+            localStorage.setItem('contrast', 'high');
+            
+            contrastDefault.classList.remove('active');
+            this.classList.add('active');
+        });
+    }
+    
+    // Indicador de progresso da página
+    const progressBar = document.getElementById('pageScrollProgress');
+    
+    if (progressBar) {
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            progressBar.style.width = scrolled + '%';
+        });
+    }
+    
+    // Dropdown menu para mobile
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    if (window.innerWidth <= 768) {
+        dropdowns.forEach(dropdown => {
+            const dropdownLink = dropdown.querySelector('.nav-link');
+            
+            dropdownLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            });
+        });
+    }
+    
+    // Adicionar classe active aos botões de acessibilidade com base nas configurações salvas
+    if (localStorage.getItem('fontSize') === 'font-size-large') {
+        document.getElementById('fontSizeLarge').classList.add('active');
+    } else if (localStorage.getItem('fontSize') === 'font-size-xlarge') {
+        document.getElementById('fontSizeXLarge').classList.add('active');
+    } else {
+        document.getElementById('fontSizeDefault').classList.add('active');
+    }
+});
+
+// Adicionar CSS dinâmico para fontes específicas para dislexia
+if (!document.getElementById('dyslexic-font-style')) {
+    const dyslexicStyle = document.createElement('style');
+    dyslexicStyle.id = 'dyslexic-font-style';
+    dyslexicStyle.textContent = `
+        /* Fonte mais amigável para dislexia */
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+        
+        body.dyslexic-font * {
+            font-family: 'Lexend', sans-serif !important;
+            letter-spacing: 0.5px !important;
+            word-spacing: 3px !important;
+            line-height: 1.8 !important;
+        }
+        
+        /* Alto contraste */
+        body.high-contrast {
+            color: white !important;
+            background-color: black !important;
+        }
+        
+        body.high-contrast .blue-bg,
+        body.high-contrast .green-bg,
+        body.high-contrast .purple-bg {
+            background-color: #111 !important;
+        }
+        
+        body.high-contrast a,
+        body.high-contrast h1,
+        body.high-contrast h2,
+        body.high-contrast h3,
+        body.high-contrast h4,
+        body.high-contrast h5,
+        body.high-contrast h6 {
+            color: yellow !important;
+        }
+        
+        body.high-contrast .btn,
+        body.high-contrast .btn-pequeno,
+        body.high-contrast .nav-item.highlight .nav-link {
+            background-color: yellow !important;
+            color: black !important;
+        }
+        
+        body.high-contrast .card,
+        body.high-contrast .intervention,
+        body.high-contrast .rights-card,
+        body.high-contrast .resource,
+        body.high-contrast .testimonial-item,
+        body.high-contrast .faq-item,
+        body.high-contrast .stat-item,
+        body.high-contrast .contact-form,
+        body.high-contrast .evento-card,
+        body.high-contrast .accessibility-panel,
+        body.high-contrast .dropdown-menu {
+            background-color: #222 !important;
+            border: 1px solid yellow !important;
+        }
+    `;
+    document.head.appendChild(dyslexicStyle);
+}

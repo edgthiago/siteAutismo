@@ -57,52 +57,123 @@
     <!-- Botão para voltar ao topo -->
     <button id="back-to-top" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Botão para modo escuro -->
-    <button class="dark-mode-toggle" id="darkModeToggle" title="Alternar modo escuro"><i class="fas fa-moon"></i></button>
-
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Portal Autismo</h1>
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-info">
+                    <div class="contact-info">
+                        <a href="tel:08006420000"><i class="fas fa-phone"></i> 0800 642 0000</a>
+                        <a href="mailto:contato@portalautismo.com.br"><i class="fas fa-envelope"></i> contato@portalautismo.com.br</a>
+                    </div>
+                    <div class="top-social">
+                        <a href="https://www.facebook.com/portalautismobrasil" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/portalautismo" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/c/portalautismo" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
             </div>
-            <button class="menu-mobile-btn" id="menuMobileBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="#sobre">O que é Autismo</a></li>
-                    <li><a href="#sinais">Sinais e Sintomas</a></li>
-                    <li><a href="#diagnostico">Diagnóstico</a></li>
-                    <li><a href="#tratamentos">Intervenções</a></li>
-                    <li><a href="#direitos">Direitos</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                    <li><a href="#recursos">Recursos</a></li>
-                    <li><a href="#eventos">Eventos</a></li>
-                    <li><a href="#faq">Perguntas Frequentes</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li class="nav-highlight"><a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i> Apoio Online</a></li>
-                </ul>
-            </nav>
         </div>
-        
-        <!-- Controles de Acessibilidade -->
-        <div class="container">
-            <div class="accessibility-controls">
-                <div class="control-group">
-                    <span class="label">Tamanho da fonte:</span>
-                    <button class="accessibility-btn" id="fontSizeDefault" title="Tamanho padrão">A</button>
-                    <button class="accessibility-btn" id="fontSizeLarge" title="Tamanho grande">A+</button>
-                    <button class="accessibility-btn" id="fontSizeXLarge" title="Tamanho muito grande">A++</button>
+
+        <div class="main-nav-wrapper">
+            <div class="container">
+                <div class="logo-wrapper">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon"><i class="fas fa-puzzle-piece"></i></div>
+                        <div class="logo-text">
+                            <h1>Portal Autismo</h1>
+                            <span class="tagline">Informação, Apoio e Inclusão</span>
+                        </div>
+                    </a>
                 </div>
                 
-                <div class="control-group">
-                    <span class="label">Leitura:</span>
-                    <button class="accessibility-btn" id="lineHeightToggle" title="Espaçamento entre linhas"><i class="fas fa-text-height"></i></button>
-                    <button class="accessibility-btn" id="readingFocusToggle" title="Modo foco de leitura"><i class="fas fa-glasses"></i></button>
+                <button class="menu-mobile-btn" id="menuMobileBtn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav" class="main-navigation">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#sobre" class="nav-link">O que é Autismo</a></li>
+                        <li class="nav-item"><a href="#sinais" class="nav-link">Sinais e Sintomas</a></li>
+                        <li class="nav-item"><a href="#diagnostico" class="nav-link">Diagnóstico</a></li>
+                        <li class="nav-item"><a href="#tratamentos" class="nav-link">Intervenções</a></li>
+                        <li class="nav-item"><a href="#direitos" class="nav-link">Direitos</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link">Mais <i class="fas fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#depoimentos">Depoimentos</a></li>
+                                <li><a href="#recursos">Recursos</a></li>
+                                <li><a href="#eventos">Eventos</a></li>
+                                <li><a href="#faq">Perguntas Frequentes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+                        <li class="nav-item highlight"><a href="https://wa.me/5511999999999" target="_blank" class="nav-link nav-cta"><i class="fab fa-whatsapp"></i> Apoio Online</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Botões flutuantes -->
+        <div class="floating-buttons">
+            <button id="darkModeToggle" title="Alternar modo escuro" class="floating-btn" aria-label="Modo escuro">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="accessibilityToggle" title="Opções de acessibilidade" class="floating-btn" aria-label="Acessibilidade">
+                <i class="fas fa-universal-access"></i>
+            </button>
+        </div>
+        
+        <!-- Painel de acessibilidade (inicialmente escondido) -->
+        <div class="accessibility-panel" id="accessibilityPanel">
+            <div class="panel-header">
+                <h3>Acessibilidade</h3>
+                <button id="closeAccessibilityPanel" aria-label="Fechar painel"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="panel-content">
+                <div class="accessibility-controls">
+                    <div class="control-group">
+                        <span class="label">Tamanho da fonte:</span>
+                        <div class="buttons-group">
+                            <button class="accessibility-btn" id="fontSizeDefault" title="Tamanho padrão">A</button>
+                            <button class="accessibility-btn" id="fontSizeLarge" title="Tamanho grande">A+</button>
+                            <button class="accessibility-btn" id="fontSizeXLarge" title="Tamanho muito grande">A++</button>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <span class="label">Opções de leitura:</span>
+                        <div class="buttons-group">
+                            <button class="accessibility-btn toggle-btn" id="lineHeightToggle" title="Espaçamento entre linhas">
+                                <i class="fas fa-text-height"></i>
+                                <span>Espaçamento</span>
+                            </button>
+                            <button class="accessibility-btn toggle-btn" id="readingFocusToggle" title="Modo foco de leitura">
+                                <i class="fas fa-glasses"></i>
+                                <span>Foco de leitura</span>
+                            </button>
+                            <button class="accessibility-btn toggle-btn" id="dyslexicFontToggle" title="Fonte para dislexia">
+                                <i class="fas fa-font"></i>
+                                <span>Fonte amigável</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <span class="label">Contraste:</span>
+                        <div class="buttons-group">
+                            <button class="accessibility-btn" id="contrastDefault" title="Contraste normal">Normal</button>
+                            <button class="accessibility-btn" id="contrastHigh" title="Alto contraste">Alto contraste</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Indicador de localização na página -->
+    <div class="page-progress-indicator">
+        <div class="progress-bar" id="pageScrollProgress"></div>
+    </div>
 
     <section class="banner">
         <div class="container">
